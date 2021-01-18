@@ -19,6 +19,11 @@ public class Payment {
         BeanUtils.copyProperties(this, paymentApproved);
         paymentApproved.publishAfterCommit();
 
+        try {
+            Thread.sleep((long) (400 + Math.random() * 300));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
